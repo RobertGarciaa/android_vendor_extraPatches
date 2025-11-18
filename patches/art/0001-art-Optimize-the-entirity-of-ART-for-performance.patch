@@ -1,0 +1,30 @@
+From 8c88248ddbd2999172a0c2446ab9b8d96a39b447 Mon Sep 17 00:00:00 2001
+From: Vaisakh Murali <vaisakhmurali@gmail.com>
+Date: Sat, 6 Jul 2024 11:34:10 +0530
+Subject: [PATCH] art: Optimize the entirity of ART for performance
+
+ART is a latency sensitive and any kind of small optimization will
+help with overall UX.
+
+Enable O3 for everything ART.
+
+Change-Id: I44ba01dd416adfd22cf46579b1073d8a79a4bf7d
+---
+ build/Android.bp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/build/Android.bp b/build/Android.bp
+index 17f6891c1b..2d06e12dbe 100644
+--- a/build/Android.bp
++++ b/build/Android.bp
+@@ -100,6 +100,7 @@ art_global_defaults {
+         "-Wshadow",
+         "-Wunused",
+         "-fvisibility=protected",
++        "-O3",
+ 
+         // Warn about thread safety violations with clang.
+         "-Wthread-safety",
+-- 
+2.43.0
+

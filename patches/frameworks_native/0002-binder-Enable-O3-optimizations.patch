@@ -1,0 +1,25 @@
+From 8b3ea9eb8ac462a1090efe15dd52457346af9758 Mon Sep 17 00:00:00 2001
+From: minaripenguin <minaripenguin@users.noreply.github.com>
+Date: Fri, 2 Aug 2024 07:25:16 +0800
+Subject: [PATCH 2/3] binder: Enable O3 optimizations
+
+Signed-off-by: Pranav Vashi <neobuddy89@gmail.com>
+---
+ libs/binder/Android.bp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/libs/binder/Android.bp b/libs/binder/Android.bp
+index a3499c1963..35ca7b687b 100644
+--- a/libs/binder/Android.bp
++++ b/libs/binder/Android.bp
+@@ -276,6 +276,7 @@ cc_defaults {
+         // the code knows to export them.
+         "-fvisibility=hidden",
+         "-DBUILDING_LIBBINDER",
++        "-O3",
+     ],
+ }
+ 
+-- 
+2.43.0
+

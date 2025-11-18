@@ -1,0 +1,33 @@
+From b75141b861beb05408be02396eb5b459343285e6 Mon Sep 17 00:00:00 2001
+From: Vaisakh Murali <mvaisakh@statixos.com>
+Date: Wed, 19 Apr 2023 10:32:33 +0000
+Subject: [PATCH 1/2] libhwui: remove deprecated perf flags
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+These no longer exist in newer clang versions.
+
+Change-Id: If72902e067c712bcdc171311c491a0a2d1996ccf
+Signed-off-by: Vaisakh Murali <mvaisakh@statixos.com>
+Signed-off-by: Hưng Phan <phandinhhungvp2001@gmail.com>
+---
+ libs/hwui/Android.bp | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/libs/hwui/Android.bp b/libs/hwui/Android.bp
+index 1bde5ff43aa8..0fef415c87f4 100644
+--- a/libs/hwui/Android.bp
++++ b/libs/hwui/Android.bp
+@@ -189,8 +189,6 @@ cc_defaults {
+     // TODO: Non-arm?
+     cflags: [
+         "-fno-omit-frame-pointer",
+-        "-marm",
+-        "-mapcs",
+     ],
+ }
+ 
+-- 
+2.43.0
+

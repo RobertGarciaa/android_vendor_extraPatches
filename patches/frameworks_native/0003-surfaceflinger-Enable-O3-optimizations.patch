@@ -1,0 +1,25 @@
+From 21cb2688748e70c03a27e4553bf851047025f268 Mon Sep 17 00:00:00 2001
+From: minaripenguin <minaripenguin@users.noreply.github.com>
+Date: Fri, 2 Aug 2024 07:23:43 +0800
+Subject: [PATCH 3/3] surfaceflinger: Enable -O3 optimizations
+
+Signed-off-by: Pranav Vashi <neobuddy89@gmail.com>
+---
+ services/surfaceflinger/Android.bp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/services/surfaceflinger/Android.bp b/services/surfaceflinger/Android.bp
+index 389e8d090c..cb935a3602 100644
+--- a/services/surfaceflinger/Android.bp
++++ b/services/surfaceflinger/Android.bp
+@@ -35,6 +35,7 @@ cc_defaults {
+         "-Wthread-safety",
+         "-Wunreachable-code",
+         "-Wunused",
++        "-O3",
+     ],
+ }
+ 
+-- 
+2.43.0
+
