@@ -1,0 +1,39 @@
+From ae5a60c512f804d1f9141846e4c54b2fab7ff144 Mon Sep 17 00:00:00 2001
+From: RobertGarciaa <chae0218@naver.com>
+Date: Sat, 19 Jul 2025 22:46:54 +0900
+Subject: [PATCH] mod
+
+---
+ .../org/lineageos/platform/internal/TrustInterfaceService.java  | 2 +-
+ sdk/src/java/lineageos/os/Build.java                            | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/lineage/lib/main/java/org/lineageos/platform/internal/TrustInterfaceService.java b/lineage/lib/main/java/org/lineageos/platform/internal/TrustInterfaceService.java
+index 0cd748e5..2428afc3 100644
+--- a/lineage/lib/main/java/org/lineageos/platform/internal/TrustInterfaceService.java
++++ b/lineage/lib/main/java/org/lineageos/platform/internal/TrustInterfaceService.java
+@@ -40,7 +40,7 @@ public class TrustInterfaceService extends LineageSystemService {
+     private static final String PLATFORM_SECURITY_PATCHES = "ro.build.version.security_patch";
+     private static final String VENDOR_SECURITY_PATCHES = "ro.vendor.build.security_patch";
+     private static final String LINEAGE_VENDOR_SECURITY_PATCHES =
+-            "ro.lineage.build.vendor_security_patch";
++            "ro.custom.build.vendor_security_patch";
+ 
+     private static final String INTENT_PARTS = "org.lineageos.lineageparts.TRUST_INTERFACE";
+     private static final String INTENT_ONBOARDING = "org.lineageos.lineageparts.TRUST_HINT";
+diff --git a/sdk/src/java/lineageos/os/Build.java b/sdk/src/java/lineageos/os/Build.java
+index fce7d64d..00854a69 100644
+--- a/sdk/src/java/lineageos/os/Build.java
++++ b/sdk/src/java/lineageos/os/Build.java
+@@ -46,7 +46,7 @@ public class Build {
+          * Will return 0 if the device does not support the Lineage SDK.
+          */
+         public static final int SDK_INT = SystemProperties.getInt(
+-                "ro.lineage.build.version.plat.sdk", 0);
++                "ro.custom.build.version.plat.sdk", 0);
+     }
+ 
+     /**
+-- 
+2.43.0
+

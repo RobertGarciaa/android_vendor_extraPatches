@@ -1,0 +1,34 @@
+From 9892b46c469c1ecb52392e3094e96055b7afec75 Mon Sep 17 00:00:00 2001
+From: RobertGarciaa <chae0218@naver.com>
+Date: Sun, 26 Oct 2025 14:16:44 +0900
+Subject: [PATCH 2/2] Revert "build: Ship adb_root only WITH_SU"
+
+for Qualcomm's QPST Diag port.
+
+This reverts commit cd069a6571f4cbcaf2f6f711101bdab661b073a9.
+---
+ config/common.mk | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/config/common.mk b/config/common.mk
+index 17f34fb0..2e742f83 100644
+--- a/config/common.mk
++++ b/config/common.mk
+@@ -279,12 +279,11 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+     system/bin/procmem
+ endif
+ 
+-ifneq ($(TARGET_BUILD_VARIANT),user)
+-ifeq ($(WITH_SU),true)
+ # Root
+ PRODUCT_PACKAGES += \
+     adb_root
+-
++ifneq ($(TARGET_BUILD_VARIANT),user)
++ifeq ($(WITH_SU),true)
+ PRODUCT_PACKAGES += \
+     su
+ 
+-- 
+2.43.0
+

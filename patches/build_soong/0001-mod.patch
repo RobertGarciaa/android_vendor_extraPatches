@@ -1,0 +1,25 @@
+From 1d5da68407c21e9551fef2c699c7ea7555d0e9ec Mon Sep 17 00:00:00 2001
+From: RobertGarciaa <chae0218@naver.com>
+Date: Sat, 19 Jul 2025 22:42:07 +0900
+Subject: [PATCH 1/2] mod
+
+---
+ scripts/gen_build_prop.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/scripts/gen_build_prop.py b/scripts/gen_build_prop.py
+index 9116fba2c..4d1c07685 100644
+--- a/scripts/gen_build_prop.py
++++ b/scripts/gen_build_prop.py
+@@ -262,7 +262,7 @@ def generate_build_info(args):
+   # flavor (via a dedicated lunch config for example).
+   print(f"ro.build.flavor={config['BuildFlavor']}")
+ 
+-  print(f"ro.lineage.device={config['LineageDevice']}")
++  print(f"ro.custom.device={config['LineageDevice']}")
+   print(f"ro.evolution.device={config['LineageDevice']}")
+ 
+   print(f"persist.sys.pihooks_FINGERPRINT={config['PihooksGmsFp']}")
+-- 
+2.43.0
+

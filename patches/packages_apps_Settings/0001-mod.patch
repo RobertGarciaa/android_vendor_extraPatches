@@ -1,0 +1,25 @@
+From f93542b863106985b5e0bafe7645ac26cd77ba73 Mon Sep 17 00:00:00 2001
+From: RobertGarciaa <chae0218@naver.com>
+Date: Sat, 19 Jul 2025 22:50:45 +0900
+Subject: [PATCH] mod
+
+---
+ .../LineageVendorSecurityPatchLevelPreferenceController.java    | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/com/android/settings/deviceinfo/firmwareversion/LineageVendorSecurityPatchLevelPreferenceController.java b/src/com/android/settings/deviceinfo/firmwareversion/LineageVendorSecurityPatchLevelPreferenceController.java
+index af910370aac..63357e78bc5 100644
+--- a/src/com/android/settings/deviceinfo/firmwareversion/LineageVendorSecurityPatchLevelPreferenceController.java
++++ b/src/com/android/settings/deviceinfo/firmwareversion/LineageVendorSecurityPatchLevelPreferenceController.java
+@@ -36,7 +36,7 @@ public class LineageVendorSecurityPatchLevelPreferenceController extends BasePre
+             "ro.vendor.build.security_patch";
+ 
+     private static final String KEY_LINEAGE_VENDOR_SECURITY_PATCH =
+-            "ro.lineage.build.vendor_security_patch";
++            "ro.custom.build.vendor_security_patch";
+ 
+     public LineageVendorSecurityPatchLevelPreferenceController(Context context, String key) {
+         super(context, key);
+-- 
+2.43.0
+

@@ -1,0 +1,25 @@
+From 2b01f6a49fbd486cc25407a8268203907f2a45fa Mon Sep 17 00:00:00 2001
+From: RobertGarciaa <chae0218@naver.com>
+Date: Sat, 19 Jul 2025 22:48:25 +0900
+Subject: [PATCH] mod
+
+---
+ src/org/lineageos/lineageparts/lineagestats/Utilities.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/org/lineageos/lineageparts/lineagestats/Utilities.java b/src/org/lineageos/lineageparts/lineagestats/Utilities.java
+index 81378f2..42bf6b8 100644
+--- a/src/org/lineageos/lineageparts/lineagestats/Utilities.java
++++ b/src/org/lineageos/lineageparts/lineagestats/Utilities.java
+@@ -64,7 +64,7 @@ public class Utilities {
+     }
+ 
+     public static String getDevice() {
+-        return SystemProperties.get("ro.lineage.device", Build.PRODUCT);
++        return SystemProperties.get("ro.custom.device", Build.PRODUCT);
+     }
+ 
+     public static String getModVersion() {
+-- 
+2.43.0
+

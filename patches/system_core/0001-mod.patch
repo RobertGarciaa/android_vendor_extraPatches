@@ -1,0 +1,25 @@
+From 8b7d3ba56591bdb6b06150037f35cebff243f15d Mon Sep 17 00:00:00 2001
+From: RobertGarciaa <chae0218@naver.com>
+Date: Sat, 19 Jul 2025 22:52:17 +0900
+Subject: [PATCH] mod
+
+---
+ debuggerd/libdebuggerd/tombstone_proto.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/debuggerd/libdebuggerd/tombstone_proto.cpp b/debuggerd/libdebuggerd/tombstone_proto.cpp
+index 95a1f9bfb8..33fa3e2c49 100644
+--- a/debuggerd/libdebuggerd/tombstone_proto.cpp
++++ b/debuggerd/libdebuggerd/tombstone_proto.cpp
+@@ -848,7 +848,7 @@ void engrave_tombstone_proto(Tombstone* tombstone, unwindstack::AndroidUnwinder*
+   } else {
+     result.set_guest_arch(Architecture::NONE);
+   }
+-  result.set_lineage_version(android::base::GetProperty("ro.lineage.version", "unknown"));
++  result.set_lineage_version(android::base::GetProperty("ro.custom.version", "unknown"));
+   result.set_build_fingerprint(android::base::GetProperty("ro.build.fingerprint", "unknown"));
+   result.set_revision(android::base::GetProperty("ro.revision", "unknown"));
+   result.set_timestamp(get_timestamp());
+-- 
+2.43.0
+
