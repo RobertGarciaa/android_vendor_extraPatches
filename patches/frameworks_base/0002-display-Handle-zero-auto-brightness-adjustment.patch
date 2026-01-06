@@ -1,0 +1,37 @@
+From e7492a03907dcc17fc9e07e1098e2623ce48ef7d Mon Sep 17 00:00:00 2001
+From: Adithya R <gh0strider.2k18.reborn@gmail.com>
+Date: Thu, 7 Sep 2023 14:43:18 +0530
+Subject: [PATCH 2/3] display: Handle zero auto brightness adjustment
+
+Some apps (such as miui camera) resets the auto brightness adjustment
+to 0.0f instead of correctly using Float.NaN, causing auto brightness
+animation to be disabled afterwards. Prevent this scenario by
+overriding it to Float.NaN ourselves.
+
+Change-Id: Idc39d120db306403482c7011db7c556f4f902468
+Signed-off-by: Pranav Vashi <neobuddy89@gmail.com>
+Signed-off-by: RobertGarciaa <chae0218@naver.com>
+---
+ .../com/android/server/display/DisplayManagerService.java   | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/services/core/java/com/android/server/display/DisplayManagerService.java b/services/core/java/com/android/server/display/DisplayManagerService.java
+index bd8f1beee873..736cd3cd2c17 100644
+--- a/services/core/java/com/android/server/display/DisplayManagerService.java
++++ b/services/core/java/com/android/server/display/DisplayManagerService.java
+@@ -5502,7 +5502,11 @@ public final class DisplayManagerService extends SystemService {
+         @Override // Binder call
+         public void setTemporaryAutoBrightnessAdjustment(float adjustment) {
+             setTemporaryAutoBrightnessAdjustment_enforcePermission();
+-            final long token = Binder.clearCallingIdentity();
++            if (adjustment == 0.0f) {
++                Slog.w(TAG, "Invalid auto brightness adjustment 0.0f, use Float.NaN instead!");
++                adjustment = Float.NaN;
++            }
++	    final long token = Binder.clearCallingIdentity();
+             try {
+                 synchronized (mSyncRoot) {
+                     mDisplayPowerControllers.get(Display.DEFAULT_DISPLAY)
+-- 
+2.43.0
+
