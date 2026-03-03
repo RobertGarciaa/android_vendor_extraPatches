@@ -1,0 +1,27 @@
+From 552fda22a5262489dc2246c180c8268fc497285e Mon Sep 17 00:00:00 2001
+From: johnmart19 <johnivan19999@gmail.com>
+Date: Sat, 22 Nov 2025 17:24:13 +0200
+Subject: [PATCH 2/3] soong: check_boot_jars: Whitelist Camera Extensions
+
+Change-Id: If1731cb8c8f784e188b32c09ef47dd7a51ff5862
+---
+ scripts/check_boot_jars/package_allowed_list.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/scripts/check_boot_jars/package_allowed_list.txt b/scripts/check_boot_jars/package_allowed_list.txt
+index 8743a8867..07f8db9a3 100644
+--- a/scripts/check_boot_jars/package_allowed_list.txt
++++ b/scripts/check_boot_jars/package_allowed_list.txt
+@@ -306,5 +306,9 @@ qcom.fmradio
+ # IFAA Manager used for Alipay and/or WeChat payment
+ org\.ifaa\.android\.manager.*
+ 
++###################################################
++# Camera Extensions
++com.camera.camera2.extensions.*
++
+ # Lineage HALs
+ vendor\.lineage\..*
+-- 
+2.43.0
+

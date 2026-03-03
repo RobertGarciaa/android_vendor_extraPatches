@@ -1,0 +1,27 @@
+From c45233cbd42942f966d0c08a207cfed30fd18e6c Mon Sep 17 00:00:00 2001
+From: johnmart19 <johnivan19999@gmail.com>
+Date: Sat, 22 Nov 2025 17:33:30 +0200
+Subject: [PATCH 3/3] soong: check_boot_jars: Whitelist Xiaomi Extensions
+
+Change-Id: I0df75935e5a784c83df91638d378201048dd9166
+---
+ scripts/check_boot_jars/package_allowed_list.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/scripts/check_boot_jars/package_allowed_list.txt b/scripts/check_boot_jars/package_allowed_list.txt
+index 07f8db9a3..9e0dfe6bb 100644
+--- a/scripts/check_boot_jars/package_allowed_list.txt
++++ b/scripts/check_boot_jars/package_allowed_list.txt
+@@ -310,5 +310,9 @@ org\.ifaa\.android\.manager.*
+ # Camera Extensions
+ com.camera.camera2.extensions.*
+ 
++###################################################
++# Xiaomi Extensions
++com.xiaomi.extensions.*
++
+ # Lineage HALs
+ vendor\.lineage\..*
+-- 
+2.43.0
+
