@@ -1,0 +1,112 @@
+From 514436446a94b32aefe422f758f39a06d6370a59 Mon Sep 17 00:00:00 2001
+From: RobertGarciaa <chae0218@naver.com>
+Date: Thu, 9 Apr 2026 13:31:37 +0900
+Subject: [PATCH] remove megvii
+
+Change-Id: I6926d6bcc3b571b6e621dd3207041aaec545a15b
+---
+ Android.bp      | 30 -----------------------------
+ megvii/megvii.c | 50 -------------------------------------------------
+ 2 files changed, 80 deletions(-)
+ delete mode 100644 megvii/megvii.c
+
+diff --git a/Android.bp b/Android.bp
+index 92f5e8c..6999460 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -369,36 +369,6 @@ cc_library {
+     vendor: true,
+ }
+ 
+-cc_defaults {
+-    name: "libMegviiFacepp_defaults",
+-    vendor: true,
+-    srcs: [
+-        "megvii/megvii.c",
+-    ],
+-}
+-
+-cc_library_shared {
+-    name: "libMegviiFacepp-0.5.2",
+-    defaults: ["libMegviiFacepp_defaults"],
+-}
+-
+-cc_library_shared {
+-    name: "libMegviiBeautyBody",
+-    defaults: ["libMegviiFacepp_defaults"],
+-    vendor: true,
+-}
+-
+-cc_library_shared {
+-    name: "libmegface",
+-    defaults: ["libMegviiFacepp_defaults"],
+-    vendor: true,
+-}
+-
+-cc_library_shared {
+-    name: "libmegskeleton",
+-    vendor: true,
+-}
+-
+ cc_library {
+     name: "libmeminfo_shim",
+     shared_libs: ["libmeminfo"],
+diff --git a/megvii/megvii.c b/megvii/megvii.c
+deleted file mode 100644
+index a783aff..0000000
+--- a/megvii/megvii.c
++++ /dev/null
+@@ -1,50 +0,0 @@
+-/*
+- * SPDX-FileCopyrightText: 2022-2026 The LineageOS Project
+- * SPDX-License-Identifier: Apache-2.0
+- */
+-
+-#define MGBB_STATUS_FAILURE 0xb
+-
+-static int stub_fail() {
+-    return -1;
+-}
+-
+-static char* stub_fail_str() {
+-    return "stub";
+-}
+-
+-void* mg_facepp[] = {
+-        // clang-format off
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail_str,
+-    &stub_fail_str,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-    &stub_fail,
+-        // clang-format on
+-};
+-
+-int _meg_beauty_body_get_api_impl(void) {
+-    return MGBB_STATUS_FAILURE;
+-}
+-- 
+2.43.0
+
