@@ -12,6 +12,7 @@ frameworks_base order:
 4. ImageReader native detach handling
 5. Stock nabu keyboard/stylus policy
 6. Native stylus long presses
+7. Pen charging notifications
 
 Settings keeps 0001 animation scale and 0002 nabu Stylus & keyboard entry.
 The patch payloads are unchanged. Input details and hardware validation limits
