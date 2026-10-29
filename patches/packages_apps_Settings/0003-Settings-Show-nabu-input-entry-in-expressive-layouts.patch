@@ -1,0 +1,45 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: nabu maintainers <nabu@localhost>
+Date: Thu, 29 Oct 2026 21:00:00 +0900
+Subject: [PATCH] Settings: Show nabu input entry in expressive layouts
+
+--- a/res/xml/top_level_settings_expressive.xml
++++ b/res/xml/top_level_settings_expressive.xml
+@@ -68,6 +68,17 @@
+             android:title="@string/configure_notification_settings"
+             android:summary="@string/notification_dashboard_summary"
+             settings:highlightableMenuKey="@string/menu_key_notifications"/>
++
++        <!-- Pad 5 stock path: Settings > Stylus & keyboard, directly below Sound. -->
++        <com.android.settings.widget.HomepagePreference
++            android:key="top_level_nabu_stylus_keyboard"
++            android:order="-39"
++            android:icon="@drawable/ic_devices_other_filled"
++            android:title="@string/nabu_stylus_keyboard_title"
++            settings:controller="com.android.settings.nabu.NabuInputPreferenceController">
++            <intent android:targetPackage="com.miui.miinput"
++                android:targetClass="com.miui.miinput.stylus.KeyBoardAndStylusSettingsActivity" />
++        </com.android.settings.widget.HomepagePreference>
+ 
+         <com.android.settings.widget.HomepagePreference
+             android:fragment="com.android.settings.notification.SoundSettings"
+--- a/res/xml/top_level_settings_expressive_desktop.xml
++++ b/res/xml/top_level_settings_expressive_desktop.xml
+@@ -65,6 +65,17 @@
+     <com.android.settingslib.widget.UntitledPreferenceCategory
+         android:order="-120"
+         android:key="top_level_personalize_category">
++        <!-- Pad 5 stock path: Settings > Stylus & keyboard, directly below Sound. -->
++        <com.android.settings.widget.HomepagePreference
++            android:key="top_level_nabu_stylus_keyboard"
++            android:order="-39"
++            android:icon="@drawable/ic_devices_other_filled"
++            android:title="@string/nabu_stylus_keyboard_title"
++            settings:controller="com.android.settings.nabu.NabuInputPreferenceController">
++            <intent android:targetPackage="com.miui.miinput"
++                android:targetClass="com.miui.miinput.stylus.KeyBoardAndStylusSettingsActivity" />
++        </com.android.settings.widget.HomepagePreference>
++
+         <com.android.settings.widget.HomepagePreference
+             android:fragment="com.android.settings.applications.AppDashboardFragment"
+             android:icon="@drawable/ic_homepage_apps"
